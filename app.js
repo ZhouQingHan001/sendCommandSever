@@ -39,7 +39,7 @@ app.post('/*', function (req, res, next) {
         console.error('error', error);
         res.send({ code: '网关出错' });
       }else {
-          res.send(response.body);
+          res.status(200).json(response.body);
         }
     });
 });
