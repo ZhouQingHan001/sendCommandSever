@@ -31,7 +31,7 @@ app.use('/', express.static(path.join(__dirname, 'public', "index.html")));
 app.post('/*', function (req, res, next) {
   console.log(req.body);
   superagent
-    .post('http://47.106.208.19:9998' + req.path)
+    .post('http://106.14.142.169:9998' + req.path)
     .set('cookie', req.headers.cookie|| null)
     .send(req.body)
     .end((error, response) => {
@@ -47,7 +47,7 @@ app.post('/*', function (req, res, next) {
 app.get('/*', function (req, res, next) {
   console.log(req.path, req.query);
   superagent
-    .get('http://47.106.208.19:9998' + req.path)
+    .get('http://106.14.142.169:9998' + req.path)
     .set('cookie', req.headers.cookie || null)
     .query(req.query)
     .end((error, response) => {
